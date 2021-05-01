@@ -34,8 +34,8 @@ public class UIViewControllerRouter {
     private var isInitialized = false
     public var isNeedAutoRegister = false {
         didSet {
-            if !isInitialized {
-                registerIfNeed()
+            if isNeedAutoRegister && !isInitialized {
+                autoRegisterIfNeed()
             }
         }
     }
@@ -43,6 +43,7 @@ public class UIViewControllerRouter {
     static let shared = UIViewControllerRouter()
     private let urlRouter = URLRouter<UIViewController>()
     private var interceptors: [InterceptorType] = []
+    private(set) var errorInterceptor = ErrorInterceptor()
     private var lock = pthread_rwlock_t()
 
     init() {
@@ -56,7 +57,7 @@ public class UIViewControllerRouter {
 
     func autoRegisterIfNeed() {
         if isNeedAutoRegister {
-            DispatchQueue.global().async {
+            DispatchQueue.init(label: "com.router.register").async {
                 self.registerIfNeed()
             }
         }
@@ -133,6 +134,10 @@ public class UIViewControllerRouter {
         self.interceptors.append(contentsOf: interceptors)
         self.interceptors.append(last)
     }
+    
+    public func registerErrorInterceptors(_ interceptor: ErrorInterceptor) {
+        self.errorInterceptor = interceptor
+    }
 }
 
 public final class UIRouter {
@@ -150,7 +155,12 @@ public final class UIRouter {
             return
         }
         UIViewControllerRouter.shared.route(url: url) { result in
-            self.viewController = try? result.get()
+            switch result {
+            case .success(let vc):
+                self.viewController = vc
+            case .failure(let error):
+                UIViewControllerRouter.shared.errorInterceptor.handle(error: error)
+            }
             completionHandler(result)
         }
     }
