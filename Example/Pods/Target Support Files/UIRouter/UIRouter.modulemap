@@ -1,6 +1,0 @@
-framework module UIRouter {
-  umbrella header "UIRouter-umbrella.h"
-
-  export *
-  module * { export * }
-}
