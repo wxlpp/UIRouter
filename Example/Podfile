@@ -1,0 +1,19 @@
+platform :ios, '9.0'
+inhibit_all_warnings!
+install! 'cocoapods', :generate_multiple_pod_projects => true, :incremental_installation => true
+
+target 'shell' do
+  use_frameworks!
+  pod 'UIRouter', :path => '../'
+  pod 'Submodule', :path => 'Submodule/'
+end
+
+post_install do |installer|
+  installer.pod_target_subprojects.flat_map { |p| p.targets }.each do |t|
+    t.build_configurations.each do |c|
+      if c.build_settings['IPHONEOS_DEPLOYMENT_TARGET'].to_f < 14.5
+        c.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '14.5'
+      end
+    end
+  end
+end

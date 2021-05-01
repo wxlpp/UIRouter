@@ -1,0 +1,41 @@
+BUILD_CONFIGURATIONS:
+  Debug: :debug
+  Release: :release
+CACHE_KEYS:
+  Pods-shell:
+    BUILD_SETTINGS_CHECKSUM:
+      Debug: 8115ad1660edece77ff5282091931ce5
+      Release: 8115ad1660edece77ff5282091931ce5
+  Submodule:
+    BUILD_SETTINGS_CHECKSUM:
+      Submodule:
+        :debug: 77b0a66a081e5d71e7d5b83d06c2f0e1
+        :release: 77b0a66a081e5d71e7d5b83d06c2f0e1
+    CHECKSUM: 4d6c30b294c43d33503985e348909fd7c4c02353
+    FILES:
+      - "../Submodule/LICENSE"
+      - "../Submodule/Source/SubViewController.swift"
+    PROJECT_NAME: Submodule
+    SPECS:
+      - Submodule (0.1.0)
+  UIRouter:
+    BUILD_SETTINGS_CHECKSUM:
+      UIRouter:
+        :debug: 38c99f6b84cc365c7b94ab76483d6f04
+        :release: 38c99f6b84cc365c7b94ab76483d6f04
+    CHECKSUM: b44b40235967b49c90a02f4c4591ccef8f25d7ae
+    FILES:
+      - "../../LICENSE"
+      - "../../README.md"
+      - "../../Source/InterceptorType.swift"
+      - "../../Source/PathComponent.swift"
+      - "../../Source/Route.swift"
+      - "../../Source/Router.swift"
+      - "../../Source/URLRouter.swift"
+      - "../../Source/WebInterceptor.swift"
+    PROJECT_NAME: UIRouter
+    SPECS:
+      - UIRouter (0.1.0)
+OBJECT_VERSION: 51
+PLUGINS:
+  {}

@@ -37,14 +37,14 @@ playground.xcworkspace
 # Swift Package Manager
 #
 # Add this line if you want to avoid checking in source code from Swift Package Manager dependencies.
-# Packages/
-# Package.pins
-# Package.resolved
+Packages/
+Package.pins
+Package.resolved
 # *.xcodeproj
 #
 # Xcode automatically generates this directory with a .xcworkspacedata file and xcuserdata
 # hence it is not needed unless you have added a package configuration file to your project
-# .swiftpm
+.swiftpm
 
 .build/
 
@@ -66,6 +66,11 @@ playground.xcworkspace
 
 Carthage/Build/
 
+# npm
+node_modules/
+package-lock.json
+package.json
+.config
 # Accio dependency management
 Dependencies/
 .accio/
