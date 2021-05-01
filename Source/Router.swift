@@ -174,11 +174,9 @@ public final class UIRouter {
         asyncGetViewController { result in
             switch result {
                 case .success(let vc):
-                    if let vc = self.viewController {
-                        let root = root ?? self.getVisibleViewController()
-                        root?.navigationController?.pushViewController(vc, animated: animated)
-                        completionHandler?(.success(vc))
-                    }
+                    let root = root ?? self.getVisibleViewController()
+                    root?.navigationController?.pushViewController(vc, animated: animated)
+                    completionHandler?(.success(vc))
                 case .failure(let error):
                     completionHandler?(.failure(error))
             }
@@ -189,12 +187,10 @@ public final class UIRouter {
         asyncGetViewController { result in
             switch result {
                 case .success(let vc):
-                    if let vc = self.viewController {
-                        let root = root ?? self.getVisibleViewController()
-                        root?.present(vc, animated: animated, completion: {
-                            completionHandler?(.success(vc))
-                        })
-                    }
+                    let root = root ?? self.getVisibleViewController()
+                    root?.present(vc, animated: animated, completion: {
+                        completionHandler?(.success(vc))
+                    })
                 case .failure(let error):
                     completionHandler?(.failure(error))
             }
@@ -205,12 +201,10 @@ public final class UIRouter {
         asyncGetViewController { result in
             switch result {
                 case .success(let vc):
-                    if let vc = self.viewController {
-                        let root = root ?? self.getVisibleViewController()
-                        root?.present(type.init(rootViewController: vc), animated: animated, completion: {
-                            completionHandler?(.success(vc))
-                        })
-                    }
+                    let root = root ?? self.getVisibleViewController()
+                    root?.present(type.init(rootViewController: vc), animated: animated, completion: {
+                        completionHandler?(.success(vc))
+                    })
                 case .failure(let error):
                     completionHandler?(.failure(error))
             }
