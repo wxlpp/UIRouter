@@ -5,7 +5,7 @@
 //  Created by wxlpp on 2021/5/1.
 //
 
-import Foundation
+import UIKit
 
 public protocol InterceptorType {
     func handle(components: URLComponents, completionHandler: @escaping RouteCompletionHandler<UIViewController?>)
