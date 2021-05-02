@@ -20,7 +20,7 @@ TODO: Add long description of the pod here.
   s.source           = { :git => 'https://github.com/wxlpp/UIRouter.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '9.0'
-
+  s.swift_versions = '5.4'
   s.source_files = 'Source/**/*'
   s.ios.frameworks = 'UIKit', 'SafariServices'
 end
