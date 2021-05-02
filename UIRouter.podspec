@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'UIRouter'
-  s.version          = '0.1.0'
+  s.version          = '0.1.0.alpha'
   s.summary          = 'Swift 实现的路由解耦框架.'
   s.description      = <<-DESC
 TODO: Add long description of the pod here.
