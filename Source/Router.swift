@@ -42,8 +42,8 @@ public class UIViewControllerRouter {
 
     static let shared = UIViewControllerRouter()
     private let urlRouter = URLRouter<UIViewController>()
-    private var interceptors: [InterceptorType] = []
-    private(set) var errorInterceptor = ErrorInterceptor()
+    private var interceptors: [RouteInterceptor] = []
+    private(set) var errorHandler: RouteErrorHandling?
     private var lock = pthread_rwlock_t()
 
     init() {
@@ -57,7 +57,7 @@ public class UIViewControllerRouter {
 
     func autoRegisterIfNeed() {
         if isNeedAutoRegister {
-            DispatchQueue.init(label: "com.router.register").async {
+            DispatchQueue(label: "com.router.register").async {
                 self.registerIfNeed()
             }
         }
@@ -88,7 +88,7 @@ public class UIViewControllerRouter {
         pthread_rwlock_unlock(&lock)
     }
 
-    func handleInterceptor(interceptors: [InterceptorType], components: URLComponents, completionHandler: @escaping RouteCompletionHandler<UIViewController>) {
+    func handleInterceptor(interceptors: [RouteInterceptor], components: URLComponents, completionHandler: @escaping RouteCompletionHandler<UIViewController>) {
         if interceptors.isEmpty {
             return
         }
@@ -129,125 +129,13 @@ public class UIViewControllerRouter {
         }
     }
 
-    public func register<T: InterceptorType>(interceptors: [T]) {
+    public func register(interceptors: [RouteInterceptor]) {
         let last = self.interceptors.removeLast()
         self.interceptors.append(contentsOf: interceptors)
         self.interceptors.append(last)
     }
-    
-    public func registerErrorInterceptors(_ interceptor: ErrorInterceptor) {
-        self.errorInterceptor = interceptor
-    }
-}
 
-public final class UIRouter {
-    private var viewController: UIViewController?
-
-    private let url: URLComponentsConvertible
-
-    init(url: URLComponentsConvertible) {
-        self.url = url
-    }
-
-    func asyncGetViewController(_ completionHandler: @escaping RouteCompletionHandler<UIViewController>) {
-        if let vc = viewController {
-            completionHandler(.success(vc))
-            return
-        }
-        UIViewControllerRouter.shared.route(url: url) { result in
-            switch result {
-            case .success(let vc):
-                self.viewController = vc
-            case .failure(let error):
-                UIViewControllerRouter.shared.errorInterceptor.handle(error: error)
-            }
-            completionHandler(result)
-        }
-    }
-
-    private func getVisibleViewController() -> UIViewController? {
-        let keyWindow: UIWindow?
-        if #available(iOS 13.0.0, *) {
-            keyWindow = UIApplication.shared.connectedScenes
-                .filter({$0.activationState == .foregroundActive})
-                .map({$0 as? UIWindowScene})
-                .compactMap({$0})
-                .first?.windows
-                .filter(\.isKeyWindow).first
-        } else {
-            keyWindow = UIApplication.shared.keyWindow
-        }
-        return keyWindow?.rootViewController?.visibleViewController()
-    }
-
-    public func push(by root: UIViewController? = nil, animated: Bool = true, completionHandler: RouteCompletionHandler<UIViewController>? = nil) {
-        asyncGetViewController { result in
-            switch result {
-                case .success(let vc):
-                    let root = root ?? self.getVisibleViewController()
-                    root?.navigationController?.pushViewController(vc, animated: animated)
-                    completionHandler?(.success(vc))
-                case .failure(let error):
-                    completionHandler?(.failure(error))
-            }
-        }
-    }
-
-    public func present(by root: UIViewController? = nil, animated: Bool = true, completionHandler: RouteCompletionHandler<UIViewController>? = nil) {
-        asyncGetViewController { result in
-            switch result {
-                case .success(let vc):
-                    let root = root ?? self.getVisibleViewController()
-                    root?.present(vc, animated: animated, completion: {
-                        completionHandler?(.success(vc))
-                    })
-                case .failure(let error):
-                    completionHandler?(.failure(error))
-            }
-        }
-    }
-
-    public func presentWithNavigationController<N: UINavigationController>(_ type: N.Type, by root: UIViewController? = nil, animated: Bool = true, completionHandler: RouteCompletionHandler<UIViewController>? = nil) {
-        asyncGetViewController { result in
-            switch result {
-                case .success(let vc):
-                    let root = root ?? self.getVisibleViewController()
-                    root?.present(type.init(rootViewController: vc), animated: animated, completion: {
-                        completionHandler?(.success(vc))
-                    })
-                case .failure(let error):
-                    completionHandler?(.failure(error))
-            }
-        }
-    }
-}
-
-public extension UIApplication {
-
-    var router: UIViewControllerRouter {
-        .shared
-    }
-
-    @inline(__always)
-    func route(url: URLComponentsConvertible) -> UIRouter {
-        UIRouter(url: url)
-    }
-}
-
-extension UIViewController {
-    func visibleViewController() -> UIViewController? {
-        if let presentedViewController = self.presentedViewController {
-            return presentedViewController.visibleViewController()
-        }
-        if let navigationController = self as? UINavigationController {
-            return navigationController.visibleViewController
-        }
-        if let tabBarController = self as? UITabBarController {
-            return tabBarController.selectedViewController?.visibleViewController()
-        }
-        if isViewLoaded {
-            return self
-        }
-        return nil
+    public func registerErrorHandler(_ handler: RouteErrorHandling) {
+        errorHandler = handler
     }
 }

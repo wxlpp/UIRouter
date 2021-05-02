@@ -1,5 +1,5 @@
 //
-//  RouteErrorHandler.swift
+//  RouteErrorHandling.swift
 //  UIRouter
 //
 //  Created by wxlpp on 2021/5/1.
@@ -13,7 +13,7 @@ public protocol RouteErrorHandling {
     func handleCustomError(_ error: Error)
 }
 
-extension RouteErrorHandling {
+public extension RouteErrorHandling {
     func handle(error: Error) {
         switch error {
             case let rooError as RouteError:

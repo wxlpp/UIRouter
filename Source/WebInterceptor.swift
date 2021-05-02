@@ -8,7 +8,7 @@
 import SafariServices
 import UIKit
 
-open class WebInterceptor: InterceptorType {
+open class WebInterceptor: RouteInterceptor {
 
     public init() {}
     open func handle(components: URLComponents, completionHandler: @escaping RouteCompletionHandler<UIViewController?>) {
