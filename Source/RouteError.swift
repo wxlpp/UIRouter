@@ -7,6 +7,8 @@
 
 import Foundation
 
+
+/// 路由错误
 public enum RouteError {
     /// 路由地址格式错误
     case badURL(url: String)
@@ -21,6 +23,8 @@ public enum RouteError {
 // MARK: - LocalizedError
 
 extension RouteError: LocalizedError {
+    
+    /// 错误信息
     public var errorDescription: String? {
         switch self {
         case .badURL(url: let url):
@@ -33,6 +37,8 @@ extension RouteError: LocalizedError {
             return "路由参数验证失败 路径[\(url)] 参数[\(name)]"
         }
     }
+    
+    /// 错误发生原因
     public var failureReason: String? {
         switch self {
         case .badURL(url: let url):

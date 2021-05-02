@@ -1,5 +1,5 @@
 //
-//  RouteResponse.swift
+//  RouteRequest.swift
 //  UIRouter
 //
 //  Created by wxlpp on 2021/5/2.
@@ -7,29 +7,14 @@
 
 import UIKit
 
-public final class RouteResponse {
+/// 路由请求包装,由此可以进行简便的页面跳转操作.
+public final class RouteRequest {
     var viewController: UIViewController?
 
     private let url: URLComponentsConvertible
 
     init(url: URLComponentsConvertible) {
         self.url = url
-    }
-
-    func asyncGetViewController(_ completionHandler: @escaping RouteCompletionHandler<UIViewController>) {
-        if let vc = viewController {
-            completionHandler(.success(vc))
-            return
-        }
-        UIViewControllerRouter.shared.route(url: url) { result in
-            switch result {
-            case .success(let vc):
-                self.viewController = vc
-            case .failure(let error):
-                UIViewControllerRouter.shared.errorHandler?.handle(error: error)
-            }
-            completionHandler(result)
-        }
     }
 
     private func getVisibleViewController() -> UIViewController? {
@@ -47,9 +32,33 @@ public final class RouteResponse {
         return keyWindow?.rootViewController?.visibleViewController()
     }
 
+    
+    /// 异步获取路由结果页面
+    /// - Parameter completionHandler: 异步回调
+    public func asyncGetViewController(_ completionHandler: @escaping RouteCompletionHandler<UIViewController>) {
+        if let vc = viewController {
+            completionHandler(.success(vc))
+            return
+        }
+        UIViewControllerRouter.shared.route(url: url) { result in
+            switch result {
+                case .success(let vc):
+                    self.viewController = vc
+                case .failure(let error):
+                    UIViewControllerRouter.shared.errorHandler?.handle(error: error)
+            }
+            completionHandler(result)
+        }
+    }
+
+    /// 进行页面跳转
+    /// - Parameters:
+    ///   - root: 使用这个`UIViewController`的`UINavigationController`进行页面跳转
+    ///   - animated: 是否开启动画
+    ///   - completionHandler: 异步回调结果
     public func push(by root: UIViewController? = nil, animated: Bool = true, completionHandler: RouteCompletionHandler<UIViewController>? = nil) {
-        if let vc = self.viewController {
-            let root = root ?? self.getVisibleViewController()
+        if let vc = viewController {
+            let root = root ?? getVisibleViewController()
             root?.navigationController?.pushViewController(vc, animated: animated)
             completionHandler?(.success(vc))
             return
@@ -66,9 +75,14 @@ public final class RouteResponse {
         }
     }
 
+    /// 弹出页面
+    /// - Parameters:
+    ///   - root: 使用这个`UIViewController`进行弹出
+    ///   - animated: 是否开启动画
+    ///   - completionHandler: 异步回调结果
     public func present(by root: UIViewController? = nil, animated: Bool = true, completionHandler: RouteCompletionHandler<UIViewController>? = nil) {
-        if let vc = self.viewController {
-            let root = root ?? self.getVisibleViewController()
+        if let vc = viewController {
+            let root = root ?? getVisibleViewController()
             root?.present(vc, animated: animated, completion: {
                 completionHandler?(.success(vc))
             })
@@ -87,9 +101,15 @@ public final class RouteResponse {
         }
     }
 
+    /// 将页面包裹在`UINavigationController`中后弹出
+    /// - Parameters:
+    ///   - type: `UINavigationController`的类型
+    ///   - root: 使用这个`UIViewController`进行弹出
+    ///   - animated: 是否开启动画
+    ///   - completionHandler: 完成后异步回调
     public func presentWithNavigationController<N: UINavigationController>(_ type: N.Type, by root: UIViewController? = nil, animated: Bool = true, completionHandler: RouteCompletionHandler<UIViewController>? = nil) {
-        if let vc = self.viewController {
-            let root = root ?? self.getVisibleViewController()
+        if let vc = viewController {
+            let root = root ?? getVisibleViewController()
             root?.present(type.init(rootViewController: vc), animated: animated, completion: {
                 completionHandler?(.success(vc))
             })

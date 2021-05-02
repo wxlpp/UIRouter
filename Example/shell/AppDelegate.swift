@@ -12,7 +12,7 @@ import UIRouter
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        application.router.isNeedAutoRegister = true
+        application.router.autoRegisterIfNeed()
         application.router.register(interceptors: [WebInterceptor()])
         application.router.registerErrorHandler(RouteErrorHandler())
         return true

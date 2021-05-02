@@ -30,15 +30,10 @@ public extension Routable {
     }
 }
 
+
+/// 一个路由器可以通过解析链接获得一个指定的`UIViewController`实例
 public class UIViewControllerRouter {
     private var isInitialized = false
-    public var isNeedAutoRegister = false {
-        didSet {
-            if isNeedAutoRegister && !isInitialized {
-                autoRegisterIfNeed()
-            }
-        }
-    }
 
     static let shared = UIViewControllerRouter()
     private let urlRouter = URLRouter<UIViewController>()
@@ -55,12 +50,30 @@ public class UIViewControllerRouter {
         pthread_rwlock_destroy(&self.lock)
     }
 
-    func autoRegisterIfNeed() {
-        if isNeedAutoRegister {
+    
+    /// 如果路由未注册,自动进行注册
+    public func autoRegisterIfNeed() {
+        if !isInitialized {
             DispatchQueue(label: "com.router.register").async {
                 self.registerIfNeed()
             }
         }
+    }
+
+    
+    /// 注册拦截器
+    /// - Parameter interceptors: 拦截器数组
+    public func register(interceptors: [RouteInterceptor]) {
+        let last = self.interceptors.removeLast()
+        self.interceptors.append(contentsOf: interceptors)
+        self.interceptors.append(last)
+    }
+
+    
+    /// 注册错误处理器
+    /// - Parameter handler: 一个错误处理器
+    public func registerErrorHandler(_ handler: RouteErrorHandling) {
+        errorHandler = handler
     }
 
     func registerIfNeed() {
@@ -127,15 +140,5 @@ public class UIViewControllerRouter {
         } catch {
             completionHandler(.failure(error))
         }
-    }
-
-    public func register(interceptors: [RouteInterceptor]) {
-        let last = self.interceptors.removeLast()
-        self.interceptors.append(contentsOf: interceptors)
-        self.interceptors.append(last)
-    }
-
-    public func registerErrorHandler(_ handler: RouteErrorHandling) {
-        errorHandler = handler
     }
 }

@@ -9,17 +9,26 @@ import UIKit
 
 public extension UIApplication {
 
+    
+    /// 返回 `UIViewControllerRouter.shared`
     var router: UIViewControllerRouter {
         .shared
     }
-
+    
+    /// 通过链接进行页面跳转
+    /// - Parameter url: 路由链接
+    /// - Returns: 返回一个`RouteRequest`实例
     @inline(__always)
-    func route(url: URLComponentsConvertible) -> RouteResponse {
-        RouteResponse(url: url)
+    func route(url: URLComponentsConvertible) -> RouteRequest {
+        RouteRequest(url: url)
     }
 
-    func route(viewcontroller: UIViewController) -> RouteResponse {
-        let router = RouteResponse(url: String(describing: viewcontroller))
+    
+    /// 直接进行页面跳转
+    /// - Parameter viewcontroller: 想要跳转的`UIViewController`实例
+    /// - Returns: 返回一个`RouteRequest`实例
+    func route(viewcontroller: UIViewController) -> RouteRequest {
+        let router = RouteRequest(url: String(describing: viewcontroller))
         router.viewController = viewcontroller
         return router
     }
