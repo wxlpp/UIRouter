@@ -20,7 +20,7 @@ public final class SubViewController: UIViewController {
     }
 }
 
-// MARK: - 路由
+// MARK: 路由
 
 extension SubViewController: Routable {
     public static func route(parameters: RouterParameters, completion: @escaping RouteCompletionHandler<SubViewController>) {

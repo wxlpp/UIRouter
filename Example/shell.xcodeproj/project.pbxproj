@@ -13,6 +13,8 @@
 		AFF8753F263D28E200234826 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFF8753E263D28E200234826 /* Assets.xcassets */; };
 		AFF87545263D28E200234826 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFF87543263D28E200234826 /* LaunchScreen.storyboard */; };
 		AFF87588263D347E00234826 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF87587263D347E00234826 /* MainViewController.swift */; };
+		AFF875AE263D8DB800234826 /* RouteErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF875AD263D8DB800234826 /* RouteErrorHandler.swift */; };
+		AFF875B0263D8F8F00234826 /* ErrorDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF875AF263D8F8F00234826 /* ErrorDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,8 @@
 		AFF87544263D28E200234826 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AFF87546263D28E200234826 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AFF87587263D347E00234826 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		AFF875AD263D8DB800234826 /* RouteErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteErrorHandler.swift; sourceTree = "<group>"; };
+		AFF875AF263D8F8F00234826 /* ErrorDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorDetailsViewController.swift; sourceTree = "<group>"; };
 		BB9D777DD817E965C11A14D5 /* Pods-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.debug.xcconfig"; path = "Target Support Files/Pods-Example/Pods-Example.debug.xcconfig"; sourceTree = "<group>"; };
 		D66A438FC3433314207D9649 /* Pods-Example-ExampleUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example-ExampleUITests.debug.xcconfig"; path = "Target Support Files/Pods-Example-ExampleUITests/Pods-Example-ExampleUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		ED4D7EAC3A8505C19CD19DA3 /* Pods-Example-ExampleUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example-ExampleUITests.release.xcconfig"; path = "Target Support Files/Pods-Example-ExampleUITests/Pods-Example-ExampleUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -100,6 +104,8 @@
 				AFF87543263D28E200234826 /* LaunchScreen.storyboard */,
 				AFF87546263D28E200234826 /* Info.plist */,
 				AFF87587263D347E00234826 /* MainViewController.swift */,
+				AFF875AD263D8DB800234826 /* RouteErrorHandler.swift */,
+				AFF875AF263D8F8F00234826 /* ErrorDetailsViewController.swift */,
 			);
 			path = shell;
 			sourceTree = "<group>";
@@ -219,6 +225,8 @@
 			files = (
 				AFF87588263D347E00234826 /* MainViewController.swift in Sources */,
 				AFF87539263D28E000234826 /* AppDelegate.swift in Sources */,
+				AFF875B0263D8F8F00234826 /* ErrorDetailsViewController.swift in Sources */,
+				AFF875AE263D8DB800234826 /* RouteErrorHandler.swift in Sources */,
 				AFF8753B263D28E000234826 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

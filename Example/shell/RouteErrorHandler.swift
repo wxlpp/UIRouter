@@ -1,5 +1,5 @@
 //
-//  RouteErrorInterceptor.swift
+//  RouteErrorHandler.swift
 //  shell
 //
 //  Created by wxlpp on 2021/5/1.
@@ -7,8 +7,8 @@
 
 import UIRouter
 
-class RouteErrorHandler: RouteErrorHandler {
-    override func handleRouteError(_ error: RouteError) {
+class RouteErrorHandler: RouteErrorHandling {
+    func handleRouteError(_ error: RouteError) {
         #if DEBUG
             let vc = ErrorDetailsViewController(error: error)
             UIApplication.shared.route(viewcontroller: vc).presentWithNavigationController(UINavigationController.self)
@@ -17,7 +17,7 @@ class RouteErrorHandler: RouteErrorHandler {
         #endif
     }
 
-    override func handleCustomError(_ error: Error) {
+    func handleCustomError(_ error: Error) {
         
     }
 }

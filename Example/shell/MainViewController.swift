@@ -9,7 +9,8 @@ import UIKit
 import UIRouter
 class MainViewController: UITableViewController {
     let routes = [(name: "SubModule", path: "sub"),
-                  (name: "Baidu", path: "https://www.baidu.com")]
+                  (name: "Baidu", path: "https://www.baidu.com"),
+                  (name: "用户简介", path: "user/profile")]
 
     override func viewDidLoad() {
         super.viewDidLoad()
