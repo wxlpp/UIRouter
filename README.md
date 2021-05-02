@@ -1,8 +1,8 @@
 ![UIRouter: Router in Swift](https://raw.githubusercontent.com/wxlpp/UIRouter/main/log.png)
 [![CocoaPods Compatible](https://img.shields.io/cocoapods/v/UIRouter.svg)](https://img.shields.io/cocoapods/v/UIRouter.svg)
 ![Cocoapods](https://img.shields.io/cocoapods/l/UIRouter)
-[![Platform](https://img.shields.io/cocoapods/p/uirouter.svg?style=flat)](https://UIRouter.github.io/uirouter)
 ![Bitbucket open issues](https://img.shields.io/bitbucket/issues/wxlpp/UIRouter)
+![Documentation](https://raw.githubusercontent.com/wxlpp/UIRouter/main/docs/badge.svg)
 
 UIRouter 是一个用Swift实现的路由解耦框架.
 [API文档](https://wxlpp.github.io/UIRouter/)
