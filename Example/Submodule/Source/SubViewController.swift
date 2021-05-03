@@ -27,7 +27,7 @@ extension SubViewController: Routable {
         completion(.success(SubViewController()))
     }
 
-    public static var path: String {
-        "sub"
+    public static var paths: [String] {
+        ["sub"]
     }
 }

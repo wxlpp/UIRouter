@@ -5,7 +5,7 @@
 //  Created by wxlpp on 2021/5/1.
 //
 
-import Foundation
+import UIKit
 
 /// 路由错误
 public enum RouteError {
@@ -16,7 +16,7 @@ public enum RouteError {
     /// 路由终点页面未注册
     case routeDoesNotExist(url: String)
     /// 参数验证失败
-    case parameterValidationFailed(url: String, name: String)
+    case parameterValidationFailed(vcType: UIViewController.Type, name: String)
 }
 
 // MARK: - LocalizedError
@@ -32,8 +32,8 @@ extension RouteError: LocalizedError {
                 return "路由失败 路径[\(url)]"
             case .routeDoesNotExist(url: let url):
                 return "路由失败 路径[\(url)]"
-            case .parameterValidationFailed(url: let url, name: let name):
-                return "路由参数验证失败 路径[\(url)] 参数[\(name)]"
+            case .parameterValidationFailed(vcType: let type, name: let name):
+                return "路由参数验证失败 页面[\(type)] 参数[\(name)]"
         }
     }
 
@@ -46,7 +46,7 @@ extension RouteError: LocalizedError {
                 return "尝试注册路由但地址已存在"
             case .routeDoesNotExist:
                 return "路由终点页面未注册"
-        case .parameterValidationFailed(url: _, name: let name):
+        case .parameterValidationFailed(vcType: _, name: let name):
                 return "未能获取参数[\(name)]"
         }
     }
