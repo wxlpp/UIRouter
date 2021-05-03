@@ -1,1 +1,1 @@
-docs/* linguist-documentation
+*.rb linguist-language=Swift
