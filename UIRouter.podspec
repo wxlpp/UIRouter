@@ -1,18 +1,8 @@
-#
-# Be sure to run `pod lib lint UIRouter.podspec' to ensure this is a
-# valid spec before submitting.
-#
-# Any lines starting with a # are optional, but their use is encouraged
-# To learn more about a Podspec see https://guides.cocoapods.org/syntax/podspec.html
-#
-
 Pod::Spec.new do |s|
   s.name             = 'UIRouter'
-  s.version          = '0.1.0.alpha'
+  s.version          = '0.2.0.alpha'
   s.summary          = 'Swift 实现的路由解耦框架.'
-  s.description      = <<-DESC
-TODO: Add long description of the pod here.
-                       DESC
+  s.description      =  'Swift 实现的路由解耦框架.'
 
   s.homepage         = 'https://github.com/wxlpp/UIRouter'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
@@ -21,6 +11,12 @@ TODO: Add long description of the pod here.
 
   s.ios.deployment_target = '9.0'
   s.swift_versions = '5.4'
-  s.source_files = 'Source/**/*'
-  s.ios.frameworks = 'UIKit', 'SafariServices'
+  s.source_files = 'Source/Core/*'
+  s.ios.frameworks = 'UIKit'
+  s.default_subspecs = :none
+
+  s.subspec 'Web' do |ss|
+    ss.source_files = 'Source/Web/*'
+    s.ios.frameworks = 'SafariServices'
+  end
 end

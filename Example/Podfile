@@ -1,13 +1,18 @@
-platform :ios, '9.0'
+platform :ios, '14.5'
 inhibit_all_warnings!
 install! 'cocoapods',
+
 :generate_multiple_pod_projects => true,
 :incremental_installation => true,
+:preserve_pod_file_structure => true,
 :warn_for_unused_master_specs_repo => false
+
+project 'shell.xcodeproj'
+workspace 'Example.xcworkspace'
 
 target 'shell' do
   use_frameworks!
-  pod 'UIRouter', :path => '../'
+  pod 'UIRouter/Web', :path => '../'
   pod 'Submodule', :path => 'Submodule/'
 end
 

@@ -1,11 +1,12 @@
 PODS:
   - Submodule (0.1.0):
     - UIRouter
-  - UIRouter (0.1.0.alpha)
+  - UIRouter (0.2.0.alpha)
+  - UIRouter/Web (0.2.0.alpha)
 
 DEPENDENCIES:
   - Submodule (from `Submodule/`)
-  - UIRouter (from `../`)
+  - UIRouter/Web (from `../`)
 
 EXTERNAL SOURCES:
   Submodule:
@@ -15,8 +16,8 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Submodule: 4d6c30b294c43d33503985e348909fd7c4c02353
-  UIRouter: cc1486c13af569df95ed9a6c0dfb0b8e5532ec65
+  UIRouter: 57c6fd4e66a174927134a6d962a9452c6e17fc12
 
-PODFILE CHECKSUM: ba24c8ebfe1e7f5e3aea87b3cd76d9bb52a9c99e
+PODFILE CHECKSUM: 5387537adb0879783c29a9e30e3acc9630837f78
 
 COCOAPODS: 1.10.1
