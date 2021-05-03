@@ -12,9 +12,11 @@ public final class RouteRequest {
     var viewController: UIViewController?
 
     private let url: URLComponentsConvertible
+    private let object: Any?
 
-    init(url: URLComponentsConvertible) {
+    init(url: URLComponentsConvertible, object: Any?) {
         self.url = url
+        self.object = object
     }
 
     private func getVisibleViewController() -> UIViewController? {
@@ -32,7 +34,6 @@ public final class RouteRequest {
         return keyWindow?.rootViewController?.visibleViewController()
     }
 
-    
     /// 异步获取路由结果页面
     /// - Parameter completionHandler: 异步回调
     public func asyncGetViewController(_ completionHandler: @escaping RouteCompletionHandler<UIViewController>) {
@@ -40,7 +41,7 @@ public final class RouteRequest {
             completionHandler(.success(vc))
             return
         }
-        UIViewControllerRouter.shared.route(url: url) { result in
+        UIViewControllerRouter.shared.route(url: url, object: object) { result in
             switch result {
                 case .success(let vc):
                     self.viewController = vc

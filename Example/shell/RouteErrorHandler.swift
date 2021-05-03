@@ -17,7 +17,5 @@ class RouteErrorHandler: RouteErrorHandling {
         #endif
     }
 
-    func handleCustomError(_ error: Error) {
-        
-    }
+    func handleCustomError(_ error: Error) {}
 }

@@ -24,7 +24,7 @@ open class URLRouter<Output>: CustomStringConvertible {
         current.handler = handler
     }
 
-    open func route(url: URLComponentsConvertible, completionHandler: @escaping RouteCompletionHandler<Output>) {
+    open func route(url: URLComponentsConvertible, object: Any?, completionHandler: @escaping RouteCompletionHandler<Output>) {
         do {
             let components = try url.asURLComponents()
             var parameters = components.queryItems ?? []
@@ -50,12 +50,12 @@ open class URLRouter<Output>: CustomStringConvertible {
                 guard let catchallHandle = currentNode.catchall?.handler else {
                     throw RouteError.routeDoesNotExist(url: components.path)
                 }
-                return catchallHandle(parameters, completionHandler)
+                return catchallHandle(parameters, object, completionHandler)
             }
             guard let handle = currentNode.handler else {
                 throw RouteError.routeDoesNotExist(url: components.path)
             }
-            return handle(parameters, completionHandler)
+            return handle(parameters, object, completionHandler)
         } catch {
             completionHandler(.failure(error))
         }

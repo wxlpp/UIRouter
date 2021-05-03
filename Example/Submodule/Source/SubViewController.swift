@@ -23,7 +23,8 @@ public final class SubViewController: UIViewController {
 // MARK: 路由
 
 extension SubViewController: Routable {
-    public static func route(parameters: RouterParameters, completion: @escaping RouteCompletionHandler<SubViewController>) {
+
+    public static func route(parameters: RouterParameters, object: Any?, completion: @escaping RouteCompletionHandler<SubViewController>) {
         completion(.success(SubViewController()))
     }
 

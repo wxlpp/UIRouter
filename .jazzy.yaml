@@ -2,6 +2,6 @@ module: UIRouter
 sdk: iphone
 swift_build_tool: xcodebuild
 podspec: UIRouter.podspec
-module_version: 1.0
+module_version: 0.2.0.alpha
 clean: true
 theme: theme/fullwidth

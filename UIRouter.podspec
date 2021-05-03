@@ -11,12 +11,16 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '9.0'
   s.swift_versions = '5.4'
-  s.source_files = 'Source/Core/*'
   s.ios.frameworks = 'UIKit'
-  s.default_subspecs = :none
+  s.default_subspecs = 'Core'
+
+  s.subspec 'Core' do |ss|
+    ss.source_files = 'Source/Core/*'
+  end
 
   s.subspec 'Web' do |ss|
+      ss.dependency 'UIRouter/Core'
     ss.source_files = 'Source/Web/*'
-    s.ios.frameworks = 'SafariServices'
+    ss.ios.frameworks = 'SafariServices'
   end
 end

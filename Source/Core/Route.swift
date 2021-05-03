@@ -10,7 +10,7 @@ import UIKit
 /// 路由结果回调闭包
 public typealias RouteCompletionHandler<T> = (Result<T, Error>) -> Void
 /// 路由处理闭包
-public typealias RouterHandler<T> = (RouterParameters, @escaping RouteCompletionHandler<T>) -> Void
+public typealias RouterHandler<T> = (RouterParameters, Any?, @escaping RouteCompletionHandler<T>) -> Void
 
 struct Route<Output> {
 

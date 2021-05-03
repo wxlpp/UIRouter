@@ -9,43 +9,41 @@ import UIKit
 
 class ErrorDetailsViewController: UITableViewController {
     let error: Error
-    let errorDetails: [(key: String,value: String)]
+    let errorDetails: [(key: String, value: String)]
 
     init(error: Error) {
         self.error = error
         if let localizedError = error as? LocalizedError {
-            var list: [(key: String,value: String)] = []
+            var list: [(key: String, value: String)] = []
             if let errorDescription = localizedError.errorDescription {
-                list.append(("简述",errorDescription))
+                list.append(("简述", errorDescription))
             }
             if let failureReason = localizedError.failureReason {
-                list.append(("原因",failureReason))
-
+                list.append(("原因", failureReason))
             }
             if let helpAnchor = localizedError.helpAnchor {
-                list.append(("解决",helpAnchor))
-
+                list.append(("解决", helpAnchor))
             }
             if let recoverySuggestion = localizedError.recoverySuggestion {
-                list.append(("恢复",recoverySuggestion))
-
+                list.append(("恢复", recoverySuggestion))
             }
-            errorDetails = list
-        }else {
-            errorDetails = [("错误",error.localizedDescription)]
+            self.errorDetails = list
+        } else {
+            self.errorDetails = [("错误", error.localizedDescription)]
         }
         super.init(style: .insetGrouped)
     }
 
+    @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.title = "错误信息"
+        title = "错误信息"
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.allowsSelection = false

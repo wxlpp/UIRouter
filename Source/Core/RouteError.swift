@@ -40,13 +40,13 @@ extension RouteError: LocalizedError {
     /// 错误发生原因
     public var failureReason: String? {
         switch self {
-        case .badURL:
+            case .badURL:
                 return "路由地址格式错误"
-        case .alreadyExist:
+            case .alreadyExist:
                 return "尝试注册路由但地址已存在"
             case .routeDoesNotExist:
                 return "路由终点页面未注册"
-        case .parameterValidationFailed(vcType: _, name: let name):
+            case .parameterValidationFailed(vcType: _, name: let name):
                 return "未能获取参数[\(name)]"
         }
     }

@@ -1,134 +1,386 @@
 {
   "warnings": [
     {
-      "file": "/Users/wxlpp/Desktop/UIRouter/Source/PathComponent.swift",
+      "file": "/Users/wxlpp/Desktop/UIRouter/Source/Core/PathComponent.swift",
       "line": 10,
       "symbol": "PathComponent",
       "symbol_kind": "source.lang.swift.decl.enum",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/wxlpp/Desktop/UIRouter/Source/PathComponent.swift",
+      "file": "/Users/wxlpp/Desktop/UIRouter/Source/Core/PathComponent.swift",
+      "line": 10,
+      "symbol": "PathComponent",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wxlpp/Desktop/UIRouter/Source/Core/PathComponent.swift",
+      "line": 10,
+      "symbol": "PathComponent",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wxlpp/Desktop/UIRouter/Source/Core/PathComponent.swift",
       "line": 12,
       "symbol": "PathComponent.constant(_:)",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/wxlpp/Desktop/UIRouter/Source/PathComponent.swift",
+      "file": "/Users/wxlpp/Desktop/UIRouter/Source/Core/PathComponent.swift",
+      "line": 12,
+      "symbol": "PathComponent.constant(_:)",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wxlpp/Desktop/UIRouter/Source/Core/PathComponent.swift",
+      "line": 12,
+      "symbol": "PathComponent.constant(_:)",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wxlpp/Desktop/UIRouter/Source/Core/PathComponent.swift",
       "line": 14,
       "symbol": "PathComponent.parameter(_:)",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/wxlpp/Desktop/UIRouter/Source/PathComponent.swift",
+      "file": "/Users/wxlpp/Desktop/UIRouter/Source/Core/PathComponent.swift",
+      "line": 14,
+      "symbol": "PathComponent.parameter(_:)",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wxlpp/Desktop/UIRouter/Source/Core/PathComponent.swift",
+      "line": 14,
+      "symbol": "PathComponent.parameter(_:)",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wxlpp/Desktop/UIRouter/Source/Core/PathComponent.swift",
       "line": 16,
       "symbol": "PathComponent.anything",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/wxlpp/Desktop/UIRouter/Source/PathComponent.swift",
+      "file": "/Users/wxlpp/Desktop/UIRouter/Source/Core/PathComponent.swift",
+      "line": 16,
+      "symbol": "PathComponent.anything",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wxlpp/Desktop/UIRouter/Source/Core/PathComponent.swift",
+      "line": 16,
+      "symbol": "PathComponent.anything",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wxlpp/Desktop/UIRouter/Source/Core/PathComponent.swift",
       "line": 18,
       "symbol": "PathComponent.catchall",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/wxlpp/Desktop/UIRouter/Source/PathComponent.swift",
+      "file": "/Users/wxlpp/Desktop/UIRouter/Source/Core/PathComponent.swift",
+      "line": 18,
+      "symbol": "PathComponent.catchall",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wxlpp/Desktop/UIRouter/Source/Core/PathComponent.swift",
+      "line": 18,
+      "symbol": "PathComponent.catchall",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wxlpp/Desktop/UIRouter/Source/Core/PathComponent.swift",
       "line": 44,
       "symbol": "Array.string",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/wxlpp/Desktop/UIRouter/Source/RouteInterceptor.swift",
+      "file": "/Users/wxlpp/Desktop/UIRouter/Source/Core/PathComponent.swift",
+      "line": 44,
+      "symbol": "Array.string",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wxlpp/Desktop/UIRouter/Source/Core/PathComponent.swift",
+      "line": 44,
+      "symbol": "Array.string",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wxlpp/Desktop/UIRouter/Source/Core/Routable.swift",
+      "line": 11,
+      "symbol": "RouteBase",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wxlpp/Desktop/UIRouter/Source/Core/Routable.swift",
+      "line": 11,
+      "symbol": "RouteBase",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wxlpp/Desktop/UIRouter/Source/Core/Routable.swift",
+      "line": 11,
+      "symbol": "RouteBase",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wxlpp/Desktop/UIRouter/Source/Core/Routable.swift",
+      "line": 12,
+      "symbol": "RouteBase.paths",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wxlpp/Desktop/UIRouter/Source/Core/Routable.swift",
+      "line": 12,
+      "symbol": "RouteBase.paths",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wxlpp/Desktop/UIRouter/Source/Core/Routable.swift",
+      "line": 12,
+      "symbol": "RouteBase.paths",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wxlpp/Desktop/UIRouter/Source/Core/Routable.swift",
+      "line": 13,
+      "symbol": "RouteBase.routeVC(parameters:object:completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wxlpp/Desktop/UIRouter/Source/Core/Routable.swift",
+      "line": 13,
+      "symbol": "RouteBase.routeVC(parameters:object:completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wxlpp/Desktop/UIRouter/Source/Core/Routable.swift",
+      "line": 13,
+      "symbol": "RouteBase.routeVC(parameters:object:completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wxlpp/Desktop/UIRouter/Source/Core/Routable.swift",
+      "line": 28,
+      "symbol": "Routable.routeVC(parameters:object:completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wxlpp/Desktop/UIRouter/Source/Core/Routable.swift",
+      "line": 28,
+      "symbol": "Routable.routeVC(parameters:object:completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wxlpp/Desktop/UIRouter/Source/Core/Routable.swift",
+      "line": 28,
+      "symbol": "Routable.routeVC(parameters:object:completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wxlpp/Desktop/UIRouter/Source/Core/RouteInterceptor.swift",
       "line": 10,
       "symbol": "RouteInterceptor",
       "symbol_kind": "source.lang.swift.decl.protocol",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/wxlpp/Desktop/UIRouter/Source/RouteInterceptor.swift",
-      "line": 11,
-      "symbol": "RouteInterceptor.handle(components:completionHandler:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/wxlpp/Desktop/UIRouter/Source/RouteInterceptor.swift",
-      "line": 15,
-      "symbol": "URLRouter.handle(components:completionHandler:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/wxlpp/Desktop/UIRouter/Source/Router.swift",
+      "file": "/Users/wxlpp/Desktop/UIRouter/Source/Core/RouteInterceptor.swift",
       "line": 10,
-      "symbol": "RouteBase",
+      "symbol": "RouteInterceptor",
       "symbol_kind": "source.lang.swift.decl.protocol",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/wxlpp/Desktop/UIRouter/Source/Router.swift",
+      "file": "/Users/wxlpp/Desktop/UIRouter/Source/Core/RouteInterceptor.swift",
+      "line": 10,
+      "symbol": "RouteInterceptor",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wxlpp/Desktop/UIRouter/Source/Core/RouteInterceptor.swift",
       "line": 11,
-      "symbol": "RouteBase.path",
-      "symbol_kind": "source.lang.swift.decl.var.static",
+      "symbol": "RouteInterceptor.handle(components:object:completionHandler:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/wxlpp/Desktop/UIRouter/Source/Router.swift",
-      "line": 12,
-      "symbol": "RouteBase.routeVC(parameters:completion:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "file": "/Users/wxlpp/Desktop/UIRouter/Source/Core/RouteInterceptor.swift",
+      "line": 11,
+      "symbol": "RouteInterceptor.handle(components:object:completionHandler:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/wxlpp/Desktop/UIRouter/Source/Router.swift",
-      "line": 26,
-      "symbol": "Routable.routeVC(parameters:completion:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "file": "/Users/wxlpp/Desktop/UIRouter/Source/Core/RouteInterceptor.swift",
+      "line": 11,
+      "symbol": "RouteInterceptor.handle(components:object:completionHandler:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/wxlpp/Desktop/UIRouter/Source/URLRouter.swift",
+      "file": "/Users/wxlpp/Desktop/UIRouter/Source/Core/RouteInterceptor.swift",
+      "line": 15,
+      "symbol": "URLRouter.handle(components:object:completionHandler:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wxlpp/Desktop/UIRouter/Source/Core/RouteInterceptor.swift",
+      "line": 15,
+      "symbol": "URLRouter.handle(components:object:completionHandler:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wxlpp/Desktop/UIRouter/Source/Core/RouteInterceptor.swift",
+      "line": 15,
+      "symbol": "URLRouter.handle(components:object:completionHandler:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wxlpp/Desktop/UIRouter/Source/Core/URLRouter.swift",
       "line": 10,
       "symbol": "URLRouter",
       "symbol_kind": "source.lang.swift.decl.class",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/wxlpp/Desktop/UIRouter/Source/URLRouter.swift",
+      "file": "/Users/wxlpp/Desktop/UIRouter/Source/Core/URLRouter.swift",
+      "line": 10,
+      "symbol": "URLRouter",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wxlpp/Desktop/UIRouter/Source/Core/URLRouter.swift",
+      "line": 10,
+      "symbol": "URLRouter",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wxlpp/Desktop/UIRouter/Source/Core/URLRouter.swift",
       "line": 13,
       "symbol": "URLRouter.init()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/wxlpp/Desktop/UIRouter/Source/URLRouter.swift",
+      "file": "/Users/wxlpp/Desktop/UIRouter/Source/Core/URLRouter.swift",
+      "line": 13,
+      "symbol": "URLRouter.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wxlpp/Desktop/UIRouter/Source/Core/URLRouter.swift",
+      "line": 13,
+      "symbol": "URLRouter.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wxlpp/Desktop/UIRouter/Source/Core/URLRouter.swift",
       "line": 14,
       "symbol": "URLRouter",
       "symbol_kind": "source.lang.swift.decl.extension",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/wxlpp/Desktop/UIRouter/Source/URLRouter.swift",
+      "file": "/Users/wxlpp/Desktop/UIRouter/Source/Core/URLRouter.swift",
+      "line": 14,
+      "symbol": "URLRouter",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wxlpp/Desktop/UIRouter/Source/Core/URLRouter.swift",
+      "line": 14,
+      "symbol": "URLRouter",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wxlpp/Desktop/UIRouter/Source/Core/URLRouter.swift",
       "line": 14,
       "symbol": "URLRouter.register(route:handler:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/wxlpp/Desktop/UIRouter/Source/URLRouter.swift",
-      "line": 27,
-      "symbol": "URLRouter.route(url:completionHandler:)",
+      "file": "/Users/wxlpp/Desktop/UIRouter/Source/Core/URLRouter.swift",
+      "line": 14,
+      "symbol": "URLRouter.register(route:handler:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/wxlpp/Desktop/UIRouter/Source/WebInterceptor.swift",
-      "line": 15,
+      "file": "/Users/wxlpp/Desktop/UIRouter/Source/Core/URLRouter.swift",
+      "line": 14,
+      "symbol": "URLRouter.register(route:handler:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wxlpp/Desktop/UIRouter/Source/Core/URLRouter.swift",
+      "line": 27,
+      "symbol": "URLRouter.route(url:object:completionHandler:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wxlpp/Desktop/UIRouter/Source/Core/URLRouter.swift",
+      "line": 27,
+      "symbol": "URLRouter.route(url:object:completionHandler:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wxlpp/Desktop/UIRouter/Source/Core/URLRouter.swift",
+      "line": 27,
+      "symbol": "URLRouter.route(url:object:completionHandler:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/wxlpp/Desktop/UIRouter/Source/Web/WebInterceptor.swift",
+      "line": 14,
       "symbol": "WebInterceptor.init()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"

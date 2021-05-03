@@ -26,7 +26,6 @@ public class UIViewControllerRouter {
         pthread_rwlock_destroy(&self.lock)
     }
 
-    
     /// 如果路由未注册,自动进行注册
     public func autoRegisterIfNeed() {
         if !isInitialized {
@@ -36,7 +35,6 @@ public class UIViewControllerRouter {
         }
     }
 
-    
     /// 注册拦截器
     /// - Parameter interceptors: 拦截器数组
     public func register(interceptors: [RouteInterceptor]) {
@@ -45,7 +43,6 @@ public class UIViewControllerRouter {
         self.interceptors.append(last)
     }
 
-    
     /// 注册错误处理器
     /// - Parameter handler: 一个错误处理器
     public func registerErrorHandler(_ handler: RouteErrorHandling) {
@@ -68,8 +65,8 @@ public class UIViewControllerRouter {
                 let item: AnyClass = classesPtr[i]
                 if let vcType = item as? RouteBase.Type {
                     for path in vcType.paths {
-                        try? urlRouter.register(route: path) { parameters, completion in
-                            vcType.routeVC(parameters: parameters, completion: completion)
+                        try? urlRouter.register(route: path) { parameters, object, completion in
+                            vcType.routeVC(parameters: parameters, object: object, completion: completion)
                         }
                     }
                 }
@@ -79,19 +76,19 @@ public class UIViewControllerRouter {
         pthread_rwlock_unlock(&lock)
     }
 
-    func handleInterceptor(interceptors: [RouteInterceptor], components: URLComponents, completionHandler: @escaping RouteCompletionHandler<UIViewController>) {
+    func handleInterceptor(interceptors: [RouteInterceptor], components: URLComponents, object: Any, completionHandler: @escaping RouteCompletionHandler<UIViewController>) {
         if interceptors.isEmpty {
             return
         }
         var interceptors = interceptors
         let interceptor = interceptors.removeFirst()
-        interceptor.handle(components: components) {[weak self] result in
+        interceptor.handle(components: components, object: object) {[weak self] result in
             switch result {
                 case .success(let vc):
                     if let vc = vc {
                         completionHandler(.success(vc))
                     } else {
-                        self?.handleInterceptor(interceptors: interceptors, components: components, completionHandler: completionHandler)
+                        self?.handleInterceptor(interceptors: interceptors, components: components, object: object, completionHandler: completionHandler)
                     }
                 case .failure(let error):
                     completionHandler(.failure(error))
@@ -99,12 +96,12 @@ public class UIViewControllerRouter {
         }
     }
 
-    func route(url: URLComponentsConvertible, completionHandler: @escaping RouteCompletionHandler<UIViewController>) {
+    func route(url: URLComponentsConvertible, object: Any?, completionHandler: @escaping RouteCompletionHandler<UIViewController>) {
         do {
             let components = try url.asURLComponents()
             registerIfNeed()
             pthread_rwlock_rdlock(&lock)
-            handleInterceptor(interceptors: interceptors, components: components) {[weak self] result in
+            handleInterceptor(interceptors: interceptors, components: components, object: object) {[weak self] result in
                 switch result {
                     case .success(let vc):
                         completionHandler(.success(vc))

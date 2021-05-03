@@ -1,5 +1,5 @@
 //
-//  UIKit[Router].swift
+//  UIApplication[Router].swift
 //  UIRouter
 //
 //  Created by wxlpp on 2021/5/2.
@@ -9,26 +9,25 @@ import UIKit
 
 public extension UIApplication {
 
-    
     /// 返回 `UIViewControllerRouter.shared`
     var router: UIViewControllerRouter {
         .shared
     }
-    
+
     /// 通过链接进行页面跳转
     /// - Parameter url: 路由链接
+    /// - Parameter object: 业务对象,默认为nil
     /// - Returns: 返回一个`RouteRequest`实例
     @inline(__always)
-    func route(url: URLComponentsConvertible) -> RouteRequest {
-        RouteRequest(url: url)
+    func route(url: URLComponentsConvertible, object: Any? = nil) -> RouteRequest {
+        RouteRequest(url: url, object: object)
     }
 
-    
     /// 直接进行页面跳转
     /// - Parameter viewcontroller: 想要跳转的`UIViewController`实例
     /// - Returns: 返回一个`RouteRequest`实例
     func route(viewcontroller: UIViewController) -> RouteRequest {
-        let router = RouteRequest(url: String(describing: viewcontroller))
+        let router = RouteRequest(url: String(describing: viewcontroller), object: nil)
         router.viewController = viewcontroller
         return router
     }
