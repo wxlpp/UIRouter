@@ -11,14 +11,14 @@ UIRouter 是一个用Swift实现的路由解耦框架.
 ### CocoaPods
 
 ```ruby
-pod 'UIRouter', '~> 0.1.0.alpha'
+pod 'UIRouter', '~> 0.2.0.alpha'
 ```
 
 ### Swift Package Manager
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/Alamofire/Alamofire.git", .upToNextMajor(from: "0.1.0"))
+    .package(url: "https://github.com/Alamofire/Alamofire.git", .upToNextMajor(from: "0.2.0"))
 ]
 ```
 ## 使用
