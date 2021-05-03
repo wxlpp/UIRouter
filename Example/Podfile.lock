@@ -1,7 +1,7 @@
 PODS:
   - Submodule (0.1.0):
     - UIRouter
-  - UIRouter (0.1.0)
+  - UIRouter (0.1.0.alpha)
 
 DEPENDENCIES:
   - Submodule (from `Submodule/`)
@@ -15,7 +15,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Submodule: 4d6c30b294c43d33503985e348909fd7c4c02353
-  UIRouter: b44b40235967b49c90a02f4c4591ccef8f25d7ae
+  UIRouter: cc1486c13af569df95ed9a6c0dfb0b8e5532ec65
 
 PODFILE CHECKSUM: 6cbdf15ab32343a1b20c502fe96b51208e44cc80
 
