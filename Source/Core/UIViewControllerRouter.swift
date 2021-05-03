@@ -76,7 +76,7 @@ public class UIViewControllerRouter {
         pthread_rwlock_unlock(&lock)
     }
 
-    func handleInterceptor(interceptors: [RouteInterceptor], components: URLComponents, object: Any, completionHandler: @escaping RouteCompletionHandler<UIViewController>) {
+    func handleInterceptor(interceptors: [RouteInterceptor], components: URLComponents, object: Any?, completionHandler: @escaping RouteCompletionHandler<UIViewController>) {
         if interceptors.isEmpty {
             return
         }

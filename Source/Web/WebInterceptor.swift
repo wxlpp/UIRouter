@@ -17,7 +17,7 @@ open class WebInterceptor: RouteInterceptor {
     /// - Parameters:
     ///   - components: 一个`URLComponents`实例,由路由链接构造.
     ///   - completionHandler: 拦截后由此进行回调.
-    open func handle(components: URLComponents, object: Any, completionHandler: @escaping RouteCompletionHandler<UIViewController?>) {
+    open func handle(components: URLComponents, object: Any?, completionHandler: @escaping RouteCompletionHandler<UIViewController?>) {
         if components.scheme?.hasPrefix("http") ?? false {
             if let url = components.url {
                 let vc = SFSafariViewController(url: url)
