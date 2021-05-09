@@ -18,7 +18,7 @@ pod 'UIRouter', '~> 0.2.0.alpha'
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/Alamofire/Alamofire.git", .upToNextMajor(from: "0.2.0"))
+    .package(url: "https://github.com/wxlpp/UIRouter", .upToNextMajor(from: "0.2.0"))
 ]
 ```
 ## 使用
